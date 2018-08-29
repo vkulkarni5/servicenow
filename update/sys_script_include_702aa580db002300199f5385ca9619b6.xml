@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_218814_customapp.CurrentUserProfile</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>CurrentUserProfile</name>
+        <script><![CDATA[var CurrentUserProfile = Class.create();
+CurrentUserProfile.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    GetCompanyId: function(){
+		return gs.getUser().getCompanyID();
+		//var company = new GlideRecord('core_company');
+		//gr.addQuery('sys_id', companyid);
+		//gr.query();
+		//return copmany.name;
+		//return company.name;
+		//return gs.getUser().getCompanyID();
+		//var gr = new GlideRecord('sys_user');
+		//var gr = new GlideRecord('sys_user');
+		//gr.query(getCompany);
+		//gr.addQuery('company', 'Joe Employee');
+		//var userid = gs.getUserID();
+		//var user = gr.get(usrID).getRecord();
+		//return gs.getUser().getRecord().getValue("employee_number");
+		//.getUser().getCompanyID();
+		//return "hello";
+		//var gr = new GlideRecord('sys_user');
+		//return gr.getValue('u_default_group');
+		//var gr = new GlideRecord("sys_user");
+		//return gs.getUser().getRecord().getValue("employee_number");
+		//return gr.getValue("company");
+		//return "hello";
+	},
+	getCompany : function(gr){
+		while (gr.next()) { //While the recordset contains records, iterate through them
+		  alert(gr.user_name);
+	   }
+	},
+    type: 'CurrentUserProfile'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-16 02:23:56</sys_created_on>
+        <sys_id>702aa580db002300199f5385ca9619b6</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>CurrentUserProfile</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_script_include_702aa580db002300199f5385ca9619b6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-16 18:21:48</sys_updated_on>
+    </sys_script_include>
+</record_update>

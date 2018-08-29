@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>angularUiPage</description>
+        <direct>false</direct>
+        <endpoint>x_218814_customapp_angularUiPage.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+<html>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <body>
+	   <g:ui_form>
+   <div ng-app="myApp" ng-controller="myCtrl">
+   First Name: <input type="text" ng-model="firstName"></input><br/>
+   Last Name: <input type="text" ng-model="lastName"></input><br/>
+	   data: <input type="text" id="fullname" name="fullname"></input><br/>
+   <br/>
+   Full Name: {{firstName + " " + lastName}}
+   <br/>
+   <button type="button" ng-click='f()'>Click Me!</button>
+   </div>
+   <script>
+   var app = angular.module('myApp', []);
+   app.controller('myCtrl', function($scope) {
+   $scope.firstName = "VJ";
+   $scope.lastName = "K";
+   $scope.f = function ()
+   {
+   alert("I m clicked ${sysparm_sys_id}");
+   }
+
+
+
+   });
+
+
+
+
+
+   </script>
+
+
+</g:ui_form>
+   </body>
+
+
+
+</html>
+
+</j:jelly>]]></html>
+        <name>angularUiPage</name>
+        <processing_script><![CDATA[function onLoad() {
+
+ var caller = g_form.getReference('fullname', callback);
+
+}
+function callback(caller){
+	var id = '5137153cc611227c000bbd1bd8cd2005';
+	g_form.setValue('fullname', id); 
+}]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-25 14:21:38</sys_created_on>
+        <sys_id>59dabec1db231300199f5385ca9619b0</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>angularUiPage</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_ui_page_59dabec1db231300199f5385ca9619b0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-26 14:32:12</sys_updated_on>
+    </sys_ui_page>
+</record_update>

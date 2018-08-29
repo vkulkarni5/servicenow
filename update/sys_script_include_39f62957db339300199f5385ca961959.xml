@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_218814_customapp.GetSubscriptionMPC</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GetSubscriptionMPC</name>
+        <script><![CDATA[var GetSubscriptionMPC = Class.create();
+GetSubscriptionMPC.prototype = {
+    initialize: function() {
+	
+
+    },
+	GetData: function(){
+		
+		var restvar;
+	  try { 
+		var r = new sn_ws.RESTMessageV2('x_218814_customapp.mpc rest api', 'GetSubscriptionCustomerId');
+		r.setRequestHeader('Content-Type', 'application/json');
+		r.setRequestHeader('customerId', 'test');
+		  r.setRequestHeader('AuthUserName', 'vijay');
+		r.setRequestHeader('AuthPassword', 'ServiceNow@int');
+		 var response = r.execute();
+		 restvar = response.getBody();
+		 var httpStatus = response.getStatusCode();
+		  gs.info(restvar);
+		  return restvar;
+		}
+		catch(ex) {
+		 var message = ex.getMessage();
+		}
+	},
+
+    type: 'GetSubscriptionMPC'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-13 18:13:23</sys_created_on>
+        <sys_id>39f62957db339300199f5385ca961959</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>GetSubscriptionMPC</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_script_include_39f62957db339300199f5385ca961959</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-13 20:21:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

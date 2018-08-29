@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mpc-widget</id>
+        <internal>false</internal>
+        <link/>
+        <name>mpc widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  try { 
+ var r = new sn_ws.RESTMessageV2('x_218814_customapp.mpc rest api', 'Default GET');
+
+//override authentication profile 
+//authentication type ='basic'/ 'oauth2'
+//r.setAuthentication(authentication type, profile name);
+
+//set a MID server name if one wants to run the message on MID
+//r.setMIDServer('MY_MID_SERVER');
+
+//if the message is configured to communicate through ECC queue, either
+//by setting a MID server or calling executeAsync, one needs to set skip_sensor
+//to true. Otherwise, one may get an intermittent error that the response body is null
+//r.setEccParameter('skip_sensor', true);
+
+ var response = r.execute();
+ var responseBody = response.getBody();
+ var httpStatus = response.getStatusCode();
+	  gs.info(responseBody);
+}
+catch(ex) {
+ var message = ex.getMessage();
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-22 14:19:52</sys_created_on>
+        <sys_id>003f5388db231300199f5385ca9619b5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>mpc widget</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sp_widget_003f5388db231300199f5385ca9619b5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-22 17:43:23</sys_updated_on>
+        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+    </sp_widget>
+</record_update>

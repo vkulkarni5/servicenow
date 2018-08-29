@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">c83f53c8db231300199f5385ca961962</sp_column>
+        <sp_widget display_value="mpc widget">003f5388db231300199f5385ca9619b5</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-22 14:19:53</sys_created_on>
+        <sys_id>483f53c8db231300199f5385ca961964</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sp_instance_483f53c8db231300199f5385ca961964</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-22 14:19:53</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=483f53c8db231300199f5385ca961964"/>
+</record_update>

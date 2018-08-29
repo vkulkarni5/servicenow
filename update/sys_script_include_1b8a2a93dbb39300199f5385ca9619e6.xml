@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_218814_customapp.UpdateSubscriptionMPC</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>UpdateSubscriptionMPC</name>
+        <script><![CDATA[var UpdateSubscriptionMPC = Class.create();
+UpdateSubscriptionMPC.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    UpdateSubscription: function(){
+	 try { 
+			 var r = new sn_ws.RESTMessageV2('x_218814_customapp.mpc rest api', 'UpdateSubscription');
+			 var response = r.execute();
+			 return response.getBody();
+			}
+		catch(ex) {
+			 var message = ex.getMessage();
+		}
+	},
+    type: 'UpdateSubscriptionMPC'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-13 23:10:30</sys_created_on>
+        <sys_id>1b8a2a93dbb39300199f5385ca9619e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UpdateSubscriptionMPC</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_script_include_1b8a2a93dbb39300199f5385ca9619e6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-13 23:10:30</sys_updated_on>
+    </sys_script_include>
+</record_update>

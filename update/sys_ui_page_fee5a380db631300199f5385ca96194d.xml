@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>mpcpage</description>
+        <direct>false</direct>
+        <endpoint>x_218814_customapp_mpcpage.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:ui_form>
+		
+		
+		<input type="text" id="comm-result" name="comm-result"></input>
+		<input type="label" id="comm-labelresult" name="comm-labelresult"></input>
+		
+		<button>submit</button>
+	</g:ui_form>
+</j:jelly>]]></html>
+        <name>mpcpage</name>
+        <processing_script><![CDATA[gs.info('testing ' + request.getParameter("comm-result"));
+var incidentCR = new GlideRecord('incident');
+incidentCR.addQuery('priority',1);
+incidentCR.query();
+while(incidentCR.next())
+	{
+		gs.print(incidentCR.number)
+	}
+]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-22 14:49:54</sys_created_on>
+        <sys_id>fee5a380db631300199f5385ca96194d</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>mpcpage</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_ui_page_fee5a380db631300199f5385ca96194d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-09 00:54:50</sys_updated_on>
+    </sys_ui_page>
+</record_update>

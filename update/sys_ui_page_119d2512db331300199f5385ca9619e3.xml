@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[ function UpdateSubscription() {
+	var ga = new GlideAjax("UpdateSubscriptionMPC");
+	 ga.addParam('sysparm_name','UpdateSubscription');
+	 ga.getXML(ajaxProcessor);
+ }
+
+function ajaxProcessor(response){
+	alert(response.responseXML.documentElement.getAttribute("answer"));
+}
+
+ function GetCompany() {
+	 var ga = new GlideAjax("CurrentUserProfile");
+	 ga.addParam('sysparm_name','GetCompanyId');
+	 ga.getXML(myCallbackFunction);
+	
+ }
+
+function myCallbackFunction(response){
+	alert(response.responseXML.documentElement.getAttribute("answer"));
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_218814_customapp_demoPost.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css"
+		   rel="stylesheet"></link>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+	
+	
+		<div class="row">
+			<div class="col-sm-5"><img src="ThriveLogo.jpg" width="231" height="70"/></div>
+			<div  class="col-sm-4"><b style="font-size:120%;padding:10px;">Microsoft Partner Center</b></div>
+			<div  class="col-sm-3"></div>
+		</div>
+	
+	
+ 	<g:evaluate var='jvar_restvar' object='true'>
+		
+var test = "<b>this is bold</b>";
+		var restvar;
+	  try { 
+	
+		var r = new sn_ws.RESTMessageV2('x_218814_customapp.mpc rest api', 'GetCurrentSubscrition');
+		r.setRequestHeader('Content-Type', 'application/json');
+		r.setRequestHeader('customerId', 'vijay');
+		 var response = r.execute();
+		 restvar = response.getBody();
+		 var httpStatus = response.getStatusCode();
+		  gs.info(restvar);
+		  restvar;
+		}
+		catch(ex) {
+		 var message = ex.getMessage();
+		}
+</g:evaluate>
+
+  
+ 
+	
+	<div class="panel panel-default">
+  <div class="panel-heading">
+	Current Subscriptions</div>
+  <div class="panel-body">
+	<div ng-app="myApp" ng-controller="myCtrl" data-ng-init="init()">
+		
+ 	<table  class="table" >
+		
+         <tr class="bg-primary">
+            <th>Subscription Name</th>
+            <th>License Count</th>
+			<th></th>
+         </tr>
+      
+  <tr ng-repeat="x in names"  class="table-bordered table-striped">
+    <td>{{ x.subscriptionName }}</td>
+	  <td>
+		  <input style="width:45px;height:32px" type="text" ng-model="x.newLicenseCount"></input>
+	  </td>
+	  <td><button type="button" style="color:white;" class="btn-sm btn-warning" ng-click="f(x)">Update</button></td>
+  </tr>
+		
+</table>
+  
+   </div>
+	 </div>
+		</div>
+   <script>
+	  
+   var app = angular.module('myApp', []);
+   app.controller('myCtrl', function($scope) {
+      var string = '${jvar_restvar}';
+	   
+	   $scope.names = JSON.parse(string);
+   $scope.init = function () {
+	   
+	   GetCompany();
+	  
+	};
+   $scope.f = function (item)
+   { 
+	    
+       UpdateSubscription();
+	   //alert("Subscription Id: " + item.subscriptionId  + " Old Count : " + item.oldLicenseCount + " New Count: " +  item.newLicenseCount);
+   };
+
+
+
+   });
+	</script>
+</j:jelly>]]></html>
+        <name>demoPost</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-10 16:06:07</sys_created_on>
+        <sys_id>119d2512db331300199f5385ca9619e3</sys_id>
+        <sys_mod_count>45</sys_mod_count>
+        <sys_name>demoPost</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_ui_page_119d2512db331300199f5385ca9619e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-16 19:51:04</sys_updated_on>
+    </sys_ui_page>
+</record_update>

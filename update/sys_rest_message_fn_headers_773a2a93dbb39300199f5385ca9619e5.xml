@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
+        <name>AuthPassword</name>
+        <rest_message_function display_value="UpdateSubscription">4cf9aa97dbb39300199f5385ca9619b9</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-13 23:04:56</sys_created_on>
+        <sys_id>773a2a93dbb39300199f5385ca9619e5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AuthPassword</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_773a2a93dbb39300199f5385ca9619e5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-13 23:04:56</sys_updated_on>
+        <value>ServiceNow@Int</value>
+    </sys_rest_message_fn_headers>
+</record_update>

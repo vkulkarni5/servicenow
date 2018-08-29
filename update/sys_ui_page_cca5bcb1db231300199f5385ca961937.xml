@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_218814_customapp_angularRest.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+	<g:evaluate>
+var test = "<b>this is bold</b>";
+	  try { 
+		 var r = new sn_ws.RESTMessageV2('x_218814_customapp.mpc rest api', 'Default GET');
+		 var response = r.execute();
+		 var restvar = response.getBody();
+		 var httpStatus = response.getStatusCode();
+		  gs.info(restvar);
+		  restvar;
+		}
+		catch(ex) {
+		 var message = ex.getMessage();
+		}
+</g:evaluate>
+
+${test}
+	 
+  ${restvar}
+	 
+</j:jelly>]]></html>
+        <name>angularRest</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-27 12:28:55</sys_created_on>
+        <sys_id>cca5bcb1db231300199f5385ca961937</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>angularRest</sys_name>
+        <sys_package display_value="customapp" source="x_218814_customapp">302e6da2db131300199f5385ca961992</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="customapp">302e6da2db131300199f5385ca961992</sys_scope>
+        <sys_update_name>sys_ui_page_cca5bcb1db231300199f5385ca961937</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-27 13:34:54</sys_updated_on>
+    </sys_ui_page>
+</record_update>
